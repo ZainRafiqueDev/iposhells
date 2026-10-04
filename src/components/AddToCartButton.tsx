@@ -23,7 +23,7 @@ export function AddToCartButton({ id, label = "Add to Cart", dark = false }: { i
     <button
       type="button"
       onClick={() => add(id)}
-      className="inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark"
+      className="inline-flex items-center justify-center rounded-lg btn-primary px-4 py-2.5 text-sm font-semibold text-white transition"
     >
       {label}
     </button>

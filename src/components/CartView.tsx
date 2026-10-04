@@ -36,7 +36,7 @@ export function CartView() {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-2xl border border-line bg-white p-10 text-center">
+      <div className="card p-10 text-center">
         <p className="text-lg font-semibold">Your cart is empty.</p>
         <p className="mt-2 text-muted">Pick workflows from the marketplace, or load a sample cart to try the flow.</p>
         <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -83,7 +83,7 @@ export function CartView() {
             ))}
           </ul>
 
-          <fieldset className="rounded-2xl border border-line bg-white p-5">
+          <fieldset className="card p-5">
             <legend className="px-2 font-heading font-semibold">Governance package</legend>
             <div className="mt-2 grid gap-3 sm:grid-cols-2">
               {(["Standard", "Advanced"] as Governance[]).map((g) => (
@@ -110,7 +110,7 @@ export function CartView() {
             </div>
           </fieldset>
 
-          <fieldset className="rounded-2xl border border-line bg-white p-5">
+          <fieldset className="card p-5">
             <legend className="px-2 font-heading font-semibold">Integration support</legend>
             <div className="mt-2 grid gap-3 sm:grid-cols-2">
               {(Object.keys(INTEGRATION_ADDON) as IntegrationKey[]).map((k) => (

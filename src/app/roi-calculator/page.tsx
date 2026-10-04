@@ -23,7 +23,7 @@ export default function RoiPage() {
           publisher: { "@type": "Organization", name: SITE_NAME },
         }}
       />
-      <section className="grid-bg bg-navy text-white">
+      <section className="hero-glow text-white">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20">
           <p className="text-sm font-semibold uppercase tracking-wider text-cyan">ROI Calculator</p>
           <h1 className="mt-3 text-4xl font-bold sm:text-5xl">Agentic Workflow ROI Calculator</h1>

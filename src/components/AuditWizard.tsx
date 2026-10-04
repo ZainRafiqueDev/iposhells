@@ -103,7 +103,7 @@ export function AuditWizard() {
   });
 
   useEffect(() => {
-    headingRef.current?.focus();
+    if (step > 0) headingRef.current?.focus();
   }, [step]);
 
   const governance: Governance = form.governance ?? cart.governance;
@@ -148,7 +148,7 @@ export function AuditWizard() {
         ))}
       </ol>
 
-      <div className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+      <div className="card p-6 sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-wider text-brand">Step {step + 1} of 4</p>
         <h2 ref={headingRef} tabIndex={-1} className="mt-1 text-2xl font-bold outline-none">
           {STEPS[step]}

@@ -66,7 +66,7 @@ export function Header() {
           </Link>
           <Link
             href={AUDIT_PATH}
-            className="hidden rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark sm:inline-block"
+            className="hidden rounded-lg btn-primary px-4 py-2 text-sm font-semibold text-white sm:inline-block"
           >
             Architecture Audit
           </Link>

@@ -73,7 +73,7 @@ export function ROICalculator() {
     <div className="grid gap-8 lg:grid-cols-2">
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="space-y-5 rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8"
+        className="space-y-5 card p-6 sm:p-8"
         aria-label="ROI inputs"
       >
         <Field id="fte" label="Number of FTEs on manual workflows" value={fte} onChange={setFte} />

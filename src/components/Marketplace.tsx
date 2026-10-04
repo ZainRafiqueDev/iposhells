@@ -28,7 +28,7 @@ export function Marketplace() {
 
       <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((w) => (
-          <li key={w.id} className="flex flex-col rounded-2xl border border-line bg-white p-6 shadow-sm">
+          <li key={w.id} className="card card-hover flex flex-col p-6">
             <span className="w-fit rounded-full bg-brand/10 px-2.5 py-0.5 text-xs font-semibold text-brand">{w.category}</span>
             <h3 className="mt-3 text-lg font-bold">{w.name}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted">{w.description}</p>

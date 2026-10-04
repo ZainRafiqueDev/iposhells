@@ -66,7 +66,7 @@ export default async function LandingPage({ params }: PageProps<"/[slug]">) {
     <>
       <JsonLd data={schema} />
 
-      <section className="grid-bg bg-navy text-white">
+      <section className="hero-glow text-white">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24">
           <nav aria-label="Breadcrumb" className="text-sm text-slate-400">
             <Link href="/" className="hover:text-cyan">
@@ -88,7 +88,7 @@ export default async function LandingPage({ params }: PageProps<"/[slug]">) {
       <Section eyebrow="The problem" title={page.problem.heading}>
         <ul className="grid gap-5 md:grid-cols-3">
           {page.problem.points.map((p) => (
-            <li key={p} className="rounded-2xl border border-line bg-white p-6 text-muted shadow-sm">
+            <li key={p} className="card p-6 text-muted">
               {p}
             </li>
           ))}
@@ -128,7 +128,7 @@ export default async function LandingPage({ params }: PageProps<"/[slug]">) {
 
       <Section eyebrow="Governance and outcomes" title="Controlled by design">
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-2xl border border-line bg-white p-6">
+          <div className="card p-6">
             <h3 className="text-lg font-bold">Governance</h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
               {page.governance.map((g) => (
@@ -136,7 +136,7 @@ export default async function LandingPage({ params }: PageProps<"/[slug]">) {
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-line bg-white p-6">
+          <div className="card p-6">
             <h3 className="text-lg font-bold">Outcomes</h3>
             <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
               {page.outcomes.map((o) => (
@@ -178,7 +178,7 @@ export default async function LandingPage({ params }: PageProps<"/[slug]">) {
             const rel = getLandingPage(slugRel);
             return rel ? (
               <li key={rel.slug}>
-                <Link href={`/${rel.slug}`} className="block rounded-2xl border border-line bg-white p-6 hover:border-brand">
+                <Link href={`/${rel.slug}`} className="card card-hover block p-6">
                   <h3 className="text-lg font-bold">{rel.title}</h3>
                   <p className="mt-2 text-sm text-muted">{rel.metaDescription}</p>
                 </Link>

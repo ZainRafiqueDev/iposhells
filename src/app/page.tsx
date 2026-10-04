@@ -30,6 +30,39 @@ const PROOF = [
   { stat: "3–7 FTE", label: "Equivalent capacity replaced", note: "Depending on workflow scope and volume." },
 ];
 
+const REFERENCES = [
+  {
+    name: "Sterling Investment Corp.",
+    logo: "/brand/client-sterling.png",
+    size: [255, 225],
+    quote: "Thanks to IPO Shells, our company has saved more than $87,000 per quarter with their amazing insights on our workforce.",
+  },
+  {
+    name: "L & S Real-estate Group",
+    logo: "/brand/client-ls.png",
+    size: [335, 180],
+    quote: "Not sure how you guys did it, but you saved us thousands of dollars in 1 month. Your system is a no-brainer for companies that have more than 10 people.",
+  },
+  {
+    name: "Merchant Billing Corp.",
+    logo: "/brand/client-merchant.png",
+    size: [255, 215],
+    quote: "Any company that has a medium sales group needs your services. Thanks again for such a detailed audit of our outdated and wasted infrastructure.",
+  },
+  {
+    name: "Godwin Services Inc.",
+    logo: "/brand/client-godwin.png",
+    size: [280, 205],
+    quote: "Your group has some of the most amazing talent for finding out all our flaws. We will be using you as a monthly asset for us.",
+  },
+  {
+    name: "Shopcom Holdings Ltd.",
+    logo: "/brand/client-shopcom.png",
+    size: [250, 205],
+    quote: "Thanks for saving us time and energy on wasted staffing. We should have found you years ago. We wasted so much money on our overlapping workforce.",
+  },
+];
+
 const SECURITY = ["Role-based access control", "Encryption in transit and at rest", "Audit logging", "Data isolation"];
 
 const TIMELINE = [
@@ -77,12 +110,12 @@ export default function Home() {
       <JsonLd data={homeSchema} />
 
       {/* 1. Hero */}
-      <section className="grid-bg bg-navy text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.4fr_1fr]">
+      <section className="hero-glow relative overflow-hidden text-white">
+        <div className="fade-up mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.4fr_1fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-cyan">Integrated Process Optimization</p>
             <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-              Agentic Data Infrastructure for Enterprise Automation
+              Agentic Data Infrastructure for <span className="text-gradient">Enterprise Automation</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300 sm:text-xl">
               Autonomous workflows. Secure data orchestration. Proven ROI.
@@ -94,14 +127,14 @@ export default function Home() {
               </ButtonLink>
             </div>
           </div>
-          <div className="mx-auto w-full max-w-sm">
+          <div className="logo-halo float-slow mx-auto w-full max-w-sm">
             <Image
               src="/brand/logo.png"
               alt="iposhells seal: Integrated Process Optimization"
               width={512}
               height={512}
               priority
-              className="rounded-full shadow-2xl ring-1 ring-white/10"
+              className="rounded-full shadow-2xl ring-4 ring-gold/40"
             />
           </div>
         </div>
@@ -111,14 +144,14 @@ export default function Home() {
       <Section eyebrow="Proof" title="Built for enterprise outcomes" intro="Autonomous execution with the security posture enterprise buyers expect.">
         <ul className="grid gap-5 md:grid-cols-3">
           {PROOF.map((p) => (
-            <li key={p.label} className="rounded-2xl border border-line bg-white p-6 shadow-sm">
-              <p className="font-heading text-4xl font-bold text-brand">{p.stat}</p>
+            <li key={p.label} className="card card-hover p-6">
+              <p className="text-gradient font-heading text-5xl font-extrabold">{p.stat}</p>
               <p className="mt-2 font-semibold">{p.label}</p>
               <p className="mt-1 text-sm text-muted">{p.note}</p>
             </li>
           ))}
         </ul>
-        <div className="mt-6 rounded-2xl border border-line bg-white p-6">
+        <div className="mt-6 card p-6">
           <h3 className="font-semibold">Security posture</h3>
           <ul className="mt-3 grid gap-2 text-sm text-muted sm:grid-cols-2 lg:grid-cols-4">
             {SECURITY.map((s) => (
@@ -189,9 +222,10 @@ export default function Home() {
           ))}
         </ol>
         <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {PILLARS.map((p) => (
-            <li key={p.name} className="rounded-2xl border border-line bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-brand">{p.name}</h3>
+          {PILLARS.map((p, i) => (
+            <li key={p.name} className="card card-hover p-6">
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand/10 font-heading text-sm font-bold text-brand">0{i + 1}</span>
+              <h3 className="mt-3 text-lg font-bold">{p.name}</h3>
               <p className="mt-2 text-sm text-muted">{p.body}</p>
             </li>
           ))}
@@ -218,15 +252,33 @@ export default function Home() {
         </ul>
       </Section>
 
-      {/* 5. Client validation */}
-      <Section eyebrow="Client validation" title="Deployed in financial services">
-        <figure className="rounded-2xl border border-line bg-white p-6 sm:p-8">
-          <blockquote className="text-lg leading-relaxed">
-            A mid-market financial institution deployed iposhells to automate KYC aggregation and regulatory reporting,
-            reducing manual workload by 60% and improving reporting accuracy.
-          </blockquote>
-          <figcaption className="mt-3 text-sm text-muted">Case study: Agentic Workflows for Financial Services</figcaption>
-        </figure>
+      {/* 5. Client validation: References */}
+      <Section id="references" eyebrow="Client validation" title="References">
+        <ul className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {REFERENCES.map((r) => (
+            <li key={r.name} className="flex">
+              <figure className="card card-hover quote-mark relative flex w-full flex-col overflow-hidden border-t-4 border-t-gold p-6">
+                <div className="flex h-36 items-center justify-center rounded-xl bg-white">
+                  <Image
+                    src={r.logo}
+                    alt={`${r.name} logo`}
+                    width={r.size[0]}
+                    height={r.size[1]}
+                    className="max-h-32 w-auto object-contain"
+                  />
+                </div>
+                <blockquote className="mt-5 flex-1 text-[15px] italic leading-relaxed text-ink">“{r.quote}”</blockquote>
+                <figcaption className="mt-4 border-t border-line pt-3 font-heading text-sm font-bold text-navy">
+                  {r.name}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-8 max-w-3xl text-muted">
+          Case study: a mid-market financial institution deployed iposhells to automate KYC aggregation and regulatory
+          reporting, reducing manual workload by 60% and improving reporting accuracy.
+        </p>
       </Section>
 
       {/* ROI */}
@@ -238,7 +290,7 @@ export default function Home() {
       <Section eyebrow="Deployment" title="Days and weeks, not months">
         <ol className="grid gap-4 md:grid-cols-5">
           {TIMELINE.map((t) => (
-            <li key={t.phase} className="rounded-2xl border border-line bg-white p-5">
+            <li key={t.phase} className="card p-5">
               <p className="text-xs font-bold uppercase tracking-wider text-brand">{t.days}</p>
               <h3 className="mt-1 font-semibold">{t.phase}</h3>
               <p className="mt-2 text-sm text-muted">{t.body}</p>
