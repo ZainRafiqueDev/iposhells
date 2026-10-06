@@ -28,14 +28,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [state, setState] = useState<CartState>(EMPTY);
   const [hydrated, setHydrated] = useState(false);
 
-  // Restore the sample cart for this browser tab. Storage may be blocked, so every access is guarded.
+  
   useEffect(() => {
     try {
       const raw = sessionStorage.getItem(STORAGE_KEY);
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time restore from sessionStorage after mount
+      
       if (raw) setState({ ...EMPTY, ...JSON.parse(raw) });
     } catch {
-      /* storage unavailable: start with an empty cart */
+    
     }
     setHydrated(true);
   }, []);
@@ -45,7 +45,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     try {
       sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch {
-      /* ignore */
+      
     }
   }, [state, hydrated]);
 

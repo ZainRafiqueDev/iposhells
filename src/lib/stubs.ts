@@ -1,6 +1,4 @@
-// Front-end placeholders only. No real OAuth, payments, or network calls.
-// Adapted from the client's reference stubs (momna1.docx): the original used alert(),
-// which blocks the page, so these resolve with a message the UI can show inline.
+
 
 export type CrmKey = "salesforce" | "hubspot" | "slack";
 

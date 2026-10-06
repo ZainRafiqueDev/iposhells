@@ -304,7 +304,7 @@ export default function Home() {
         <CrmButtons dark />
       </Section>
 
-      {/* 6. Domain alignment */}
+      
       <Section eyebrow="About iposhells" title="What is Agentic Data Infrastructure?">
         <p className="max-w-3xl text-lg leading-relaxed text-muted">
           Agentic Data Infrastructure is the next evolution of enterprise automation. Instead of tools that require human

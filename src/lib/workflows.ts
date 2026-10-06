@@ -1,5 +1,4 @@
-// Sample/mock data for the Phase 1 front-end. Names and categories come from the
-// client's Workflow Marketplace copy; prices and impact figures are placeholders.
+
 
 export type Category = "Outbound" | "Research" | "Operations" | "Data" | "Compliance";
 
