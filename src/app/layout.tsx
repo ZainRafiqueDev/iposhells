@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import { Header } from "@/components/Header";
@@ -8,11 +9,15 @@ import { JsonLd } from "@/components/JsonLd";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const roboto = Roboto({
+// Roboto is self-hosted: next/font/google with several weights fails under Turbopack on Vercel.
+const roboto = localFont({
   variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
   display: "swap",
+  src: [
+    { path: "./fonts/roboto-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/roboto-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/roboto-latin-700-normal.woff2", weight: "700", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {

@@ -32,10 +32,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const raw = sessionStorage.getItem(STORAGE_KEY);
-      
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time restore from sessionStorage after mount
       if (raw) setState({ ...EMPTY, ...JSON.parse(raw) });
     } catch {
-    
+      /* storage unavailable: start with an empty cart */
     }
     setHydrated(true);
   }, []);
