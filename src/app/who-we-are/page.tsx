@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Wordmark } from "@/components/Logo";
 import { ButtonLink, Section } from "@/components/ui";
 import { AUDIT_PATH } from "@/lib/site";
 
@@ -96,12 +97,8 @@ export default function WhoWeArePage() {
 
       <Section title="Ready to Transform Your Audit Workflow?" dark>
         <div className="max-w-3xl">
-          {/* TODO: replace with the final logo asset */}
-          <div
-            aria-hidden
-            className="mb-8 flex h-24 w-56 items-center justify-center rounded-xl border border-dashed border-white/30 text-sm text-slate-400"
-          >
-            Logo placeholder
+          <div className="mb-8">
+            <Wordmark light />
           </div>
           <p className="text-lg leading-relaxed text-slate-300">
             Partner with IPOshells and discover how our Agentic Workflow System can save your organization time and
