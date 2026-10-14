@@ -10,4 +10,5 @@ export const NAV_LINKS = [
   { href: "/#architecture", label: "Platform" },
   { href: "/#marketplace", label: "Workflow Marketplace" },
   { href: "/roi-calculator", label: "ROI Calculator" },
+  { href: "/who-we-are", label: "Who We Are" },
 ] as const;
